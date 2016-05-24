@@ -1,0 +1,104 @@
+<div ng-controller="gameController">
+  <div><br><br><br></div>
+  <button class="btn waves-effect waves-light blue lighten-1" ng-click="PostGame()" type="submit" ng-show="isAdmin()">Post Game </button>
+    <div class="row" ng-show="isAdmin()">
+      <div class="input-field col s4">
+        <input placeholder="ISBN" type="text" name="isbn" ng-model="game.isbn">
+        
+      </div>
+      
+      <div class="input-field col s8">
+        <input placeholder="Title" type="text" name="title" ng-model="game.title">
+        
+      </div>
+      
+      <div class="input-field col s6">
+        <input placeholder="Rating" type="text" name="rating" ng-model="game.rating">
+        
+      </div>
+      
+      <div class="input-field col s6">
+        <input placeholder="Developer" type="text" name="developer" ng-model="game.developer">
+        
+      </div>
+                
+    </div>
+    <div><br><br></div>
+    <div class="row">
+      <div class="col s9">
+        <button class="btn waves-effect waves-light blue lighten-1" type="submit" ng-click="GetGames()" ng-show="isRegular() || isAdmin()" >Get Games</button>
+      </div>
+      <div><br><br></div>
+      
+    <div ng-show="isAdmin() || isRegular()">
+      <table class="highlight bordered">
+        <tr>
+          <th>
+            ISBN
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            Rating
+          </th>
+          <th>
+            Developer
+          </th>
+        </tr>
+        <tr ng-repeat="game in games">
+          <td>
+            {{game.isbn}}
+          </td>
+          <td>
+            {{game.title}}
+          </td>
+          <td>
+            {{game.rating}}
+          </td>
+          <td>
+            {{game.developer}}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div><br><br><br></div>
+    <div class="row">
+      <div class="col s4">
+        <input type="text" placeholder="Isbn of game to be deleted" ng-show="isAdmin()" ng-model="lols">    
+      </div>
+      <div class="col s3">
+        <button class="btn waves-effect waves-light blue lighten-1" type="submit" ng-click="DeleteGame(lols)" ng-show="isAdmin()" >Delete Game</button>
+      </div>
+      <div class="col s3 offset-s2">
+        <button class="btn waves-effect waves-light blue lighten-1" type="submit" ng-click="DeleteGames()" ng-show="isAdmin()" >Delete All Games</button>
+      </div>
+    </div>
+    
+    <div><br><br><br></div>
+     <div class="input-field col s4">
+        <input placeholder="ISBN of game to update" type="text" name="isbn" ng-model="game2.isbn" ng-show="isAdmin()">
+        
+      </div>
+      
+      <div class="input-field col s8">
+        <input placeholder="New Title" type="text" name="title" ng-model="game2.title" ng-show="isAdmin()">
+        
+      </div>
+      
+      <div class="input-field col s6">
+        <input placeholder="New Rating" type="text" name="rating" ng-model="game2.rating" ng-show="isAdmin()">
+        
+      </div>
+      
+      <div class="input-field col s6">
+        <input placeholder="New Developer" type="text" name="developer" ng-model="game2.developer" ng-show="isAdmin()">
+        
+      </div>
+      <div class="row">
+        <div class="col s12">
+           <button class="btn waves-effect waves-light blue lighten-1" type="submit" ng-click="UpdateGame()" ng-show="isAdmin()" >Modify</button>
+        </div>
+      </div>
+    
+</div>
