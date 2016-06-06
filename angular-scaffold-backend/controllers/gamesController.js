@@ -10,7 +10,7 @@ exports.getGames = {
   handler: function(request, reply){
     var games = game.find({}).exec(function(err,Games) {
       if(err){
-        alert("Error");
+        return reply('Error');
       }else{
         
         console.log(Games);
@@ -36,7 +36,7 @@ exports.createGame = {
     });
     newGame.save(function (err,Game) {
       if(err){
-        alert("Error al crear");
+        return reply("Error al crear");
       }else{
         console.log(Game);
         return reply('funka');
@@ -50,7 +50,7 @@ exports.getGame = {
   handler: function(request, reply){
     var games = game.find({isbn:request.params.isbn}).exec(function (err,Game) {
       if(err){
-        return reply.alert("No se encontro el libro");
+        return reply("No se encontro el libro");
       }else{
        return reply(games); 
       }
@@ -68,7 +68,7 @@ exports.deleteGame = {
     var games = game.find({isbn:request.params.isbn});
     games.remove().exec(function (err,games) {
       if(err){
-        alert("Error");
+        return reply("Error");
       }else{
         return reply("Deleted");    
       }
