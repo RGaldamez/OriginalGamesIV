@@ -3,22 +3,26 @@
   <button class="btn waves-effect waves-light blue lighten-1" ng-click="PostGame()" type="submit" ng-show="isAdmin()">Post Game </button>
     <div class="row" ng-show="isAdmin()">
       <div class="input-field col s4">
-        <input placeholder="ISBN" type="text" name="isbn" ng-model="game.isbn">
+        <input type="text" name="isbn" ng-model="game.isbn" id="gam">
+        <label for="gam">ISBN</label>
         
       </div>
       
       <div class="input-field col s8">
-        <input placeholder="Title" type="text" name="title" ng-model="game.title">
+        <input  type="text" name="title" ng-model="game.title" id="Titl">
+        <label for="titl"> Title</label>
         
       </div>
       
       <div class="input-field col s6">
-        <input placeholder="Rating" type="text" name="rating" ng-model="game.rating">
+        <input  type="text" name="rating" ng-model="game.rating" id="rat">
+        <label for="rat">Rating</label>
         
       </div>
       
       <div class="input-field col s6">
-        <input placeholder="Developer" type="text" name="developer" ng-model="game.developer">
+        <input  type="text" name="developer" ng-model="game.developer" id="dev">
+        <label for="dev">Developer</label>
         
       </div>
                 

@@ -28,6 +28,6 @@
     "<div",
     "ui-view></div>"
   ],
-  "author": "viktor zavala",
+  "author": "ricardo galdamez based on viktor's",
   "license": "ISC"
 }

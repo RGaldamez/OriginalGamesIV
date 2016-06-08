@@ -1,7 +1,7 @@
 {
   "name": "angular-sacffold",
   "authors": [
-    "Ricardo Galdamez"
+    "ricardo galdamez based on viktor's"
   ],
   "description": "AngularJS scaffold app with Hapi server",
   "main": "index.html",
